@@ -64,9 +64,7 @@ PluginComponent {
                     if (result.error) {
                         root.hasError = true
                         root.errorMessage = result.error
-                        root.glucoseValue = "--"
-                        root.trendArrow = ""
-                        root.glucoseColor = Theme.surfaceText
+                        // Keep last known values, just show warning
                     } else {
                         root.hasError = false
                         root.glucoseValue = result.value
@@ -80,7 +78,7 @@ PluginComponent {
                     console.error("LibreGlucose: Parse error:", e)
                     root.hasError = true
                     root.errorMessage = "Parse error"
-                    root.glucoseValue = "--"
+                    // Keep last known values
                 }
                 root.isLoading = false
             }
@@ -96,7 +94,7 @@ PluginComponent {
             if (exitCode !== 0 && !root.hasError) {
                 root.hasError = true
                 root.errorMessage = "Backend error"
-                root.glucoseValue = "--"
+                // Keep last known values
             }
             root.isLoading = false
         }
