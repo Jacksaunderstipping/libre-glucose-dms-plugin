@@ -1,0 +1,13 @@
+{
+  "id": "libreGlucose",
+  "name": "Libre Glucose Monitor",
+  "description": "Display blood glucose readings from Libre LinkUp in your DankBar",
+  "version": "1.0.0",
+  "author": "jack",
+  "icon": "water_drop",
+  "type": "widget",
+  "capabilities": ["dankbar-widget", "glucose-monitor"],
+  "component": "./LibreGlucoseWidget.qml",
+  "settings": "./Settings.qml",
+  "permissions": ["settings_read", "settings_write", "network"]
+}
