@@ -98,16 +98,14 @@ function curlRequest(method, endpoint, data = null, authToken = null) {
     }
 }
 
-// Get trend arrow (LibreLinkUp codes: 1=falling fast, 4=stable, 7=rising fast)
+// Get trend arrow (LibreLinkUp codes: 1=down, 3=flat, 5=up)
 function getTrendArrow(trendCode) {
     const arrows = {
-        1: '⇊',  // Falling fast
-        2: '↓',  // Falling
-        3: '↘',  // Falling slowly
-        4: '→',  // Stable
-        5: '↗',  // Rising slowly
-        6: '↑',  // Rising
-        7: '⇈'   // Rising fast
+        1: '↓',  // Falling
+        2: '↘',  // Falling slowly
+        3: '→',  // Stable/Flat
+        4: '↗',  // Rising slowly
+        5: '↑'   // Rising
     };
     return arrows[trendCode] || '';
 }
